@@ -1,0 +1,495 @@
+/* =================================
+   1. ESTILOS GLOBAIS E VARIÁVEIS
+   ================================= */
+:root {
+    --cor-primaria-verde: #1E8E3E;
+    --cor-texto-escuro: #202124;
+    --cor-texto-secundario: #5f6368;
+    --cor-texto-claro: #FFFFFF;
+    --cor-borda: #DADCE0;
+    --cor-fundo: #E8F5E9;
+    --cor-campo-obrigatorio: #fffde7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--cor-texto-escuro);
+    background-color: var(--cor-fundo);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =================================
+   2. COMPONENTES REUTILIZÁVEIS
+   ================================= */
+
+/* --- Cabeçalho --- */
+.cabecalho-principal {
+    background-color: var(--cor-texto-claro);
+    border-bottom: 1px solid var(--cor-borda);
+    padding: 15px 0;
+}
+
+.cabecalho-principal .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo, .logo:link, .logo:visited {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--cor-texto-escuro);
+    font-weight: 600;
+}
+
+.cabecalho-principal .logo {
+    font-size: 1.5em;
+}
+
+.logo svg {
+    margin-right: 10px;
+}
+
+.link-sair {
+    color: var(--cor-texto-escuro);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.link-sair:hover {
+    color: var(--cor-primaria-verde);
+}
+
+/* --- Botões --- */
+.botao {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1em;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.botao-primario {
+    background-color: var(--cor-primaria-verde);
+    color: var(--cor-texto-claro);
+}
+
+.botao-primario:hover {
+    background-color: #1a7d36;
+}
+
+.botao-secundario {
+    background-color: var(--cor-texto-claro);
+    color: var(--cor-texto-escuro);
+    border-color: var(--cor-borda);
+}
+
+.botao-secundario:hover {
+    border-color: var(--cor-texto-escuro);
+    background-color: #f1f3f4;
+}
+
+.botao-inteiro {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* --- Formulários --- */
+.grupo-formulario {
+    margin-bottom: 20px;
+}
+
+.grupo-formulario label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.grupo-formulario input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+.grupo-formulario input:focus {
+    outline: none;
+    border-color: var(--cor-primaria-verde);
+    box-shadow: 0 0 0 2px rgba(30, 142, 62, 0.2);
+}
+
+.campo-obrigatorio {
+    background-color: var(--cor-campo-obrigatorio);
+}
+
+textarea {
+    font-family: 'Poppins', sans-serif;
+    resize: vertical;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+.mensagem-erro {
+    color: #D93025;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 500;
+    min-height: 1.2em;
+}
+
+/* =================================
+   3. ESTILOS ESPECÍFICOS DAS PÁGINAS
+   ================================= */
+
+/* --- Página Inicial (index.html) --- */
+.pagina-inicial {
+    background-color: var(--cor-fundo);
+}
+
+.pagina-inicial .cabecalho-principal {
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.navegacao-principal a {
+    text-decoration: none;
+    color: var(--cor-texto-escuro);
+    margin-left: 25px;
+    font-weight: 500;
+    padding-bottom: 5px;
+    transition: color 0.2s ease;
+}
+
+.navegacao-principal a:hover {
+    color: var(--cor-primaria-verde);
+}
+
+.secao-destaque {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: calc(100vh - 80px);
+    padding: 0 20px;
+}
+
+.destaque-conteudo {
+    max-width: 750px;
+}
+
+.destaque-titulo {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+}
+
+.destaque-titulo .destaque-verde {
+    color: var(--cor-primaria-verde);
+}
+
+.destaque-subtitulo {
+    font-size: 1.25rem;
+    color: var(--cor-texto-secundario);
+    margin: 0 0 40px 0;
+}
+
+.destaque-acoes .botao {
+    margin: 0 10px;
+}
+
+/* --- Página de Login (login.html) --- */
+.pagina-login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-cabecalho {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-cabecalho .logo {
+    justify-content: center;
+    font-size: 1.8em;
+}
+
+.login-cabecalho p {
+    color: var(--cor-texto-secundario);
+    margin-top: 5px;
+}
+
+.caixa-login {
+    background: var(--cor-texto-claro);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 420px;
+}
+
+.caixa-login-cabecalho {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.caixa-login-cabecalho h2 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.caixa-login-cabecalho p {
+    margin-top: 5px;
+    color: var(--cor-texto-secundario);
+}
+
+.abas {
+    display: flex;
+    border-bottom: 1px solid var(--cor-borda);
+    margin-bottom: 25px;
+}
+
+.aba-botao {
+    flex: 1;
+    padding: 15px;
+    font-size: 1em;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--cor-texto-secundario);
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.aba-botao.ativo {
+    color: var(--cor-primaria-verde);
+    border-bottom-color: var(--cor-primaria-verde);
+}
+
+.aba-conteudo {
+    display: none;
+}
+
+.aba-conteudo.ativo {
+    display: block;
+}
+
+.formulario-titulo {
+    text-align: center;
+    font-weight: 500;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 20px;
+}
+
+/* --- Páginas de Formulário e Dashboards --- */
+.painel-cabecalho {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.painel-cabecalho h2 {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.painel-cabecalho p {
+    font-size: 1.1em;
+    color: var(--cor-texto-secundario);
+}
+
+.container-formulario-isolado {
+    margin: 40px auto;
+    max-width: 600px;
+    width: 100%;
+    background-color: var(--cor-texto-claro);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--cor-borda);
+}
+
+.mensagem-vazia {
+    text-align: center;
+    font-size: 1.2em;
+    color: #5f6368;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+/* --- Lista e Cards (CRUD e Coletor) --- */
+.item-coleta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cor-texto-claro);
+    padding: 20px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.item-informacoes h3 {
+    margin: 0 0 5px 0;
+    color: var(--cor-primaria-verde);
+}
+
+.item-informacoes p {
+    margin: 0;
+    color: var(--cor-texto-secundario);
+}
+
+.item-acoes a, .item-acoes button {
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+}
+
+.botao-editar {
+    color: var(--cor-primaria-verde);
+    border: 1px solid var(--cor-primaria-verde);
+    background: transparent;
+}
+
+.botao-apagar {
+    color: #D93025;
+    background-color: transparent;
+    border: 1px solid #D93025;
+}
+
+.container-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.card-acao {
+    background-color: var(--cor-texto-claro);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    padding: 25px;
+    width: 320px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-acao h3 {
+    font-size: 1.3em;
+    color: var(--cor-primaria-verde);
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--cor-borda);
+    padding-bottom: 15px;
+}
+
+.card-acao p {
+    margin: 0 0 12px 0;
+    line-height: 1.6;
+    color: var(--cor-texto-secundario);
+    flex-grow: 1;
+}
+
+.card-acao p strong {
+    color: var(--cor-texto-escuro);
+}
+
+/* =================================
+   4. RESPONSIVIDADE
+   ================================= */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    .cabecalho-principal .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .secao-destaque {
+        height: auto;
+        padding: 60px 15px;
+    }
+    .destaque-titulo {
+        font-size: 2.5rem;
+    }
+    .destaque-subtitulo {
+        font-size: 1.1rem;
+    }
+    .destaque-acoes {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    .caixa-login {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navegacao-principal {
+        font-size: 0.9em;
+    }
+    .navegacao-principal a {
+        margin-left: 15px;
+    }
+    .destaque-titulo {
+        font-size: 2rem;
+    }
+    .destaque-subtitulo {
+        font-size: 1rem;
+    }
+    .botao {
+        width: 100%;
+        max-width: 300px;
+    }
+    .caixa-login {
+        padding: 20px;
+        box-shadow: none;
+        border: 1px solid var(--cor-borda);
+    }
+    .abas {
+        flex-direction: column;
+    }
+    .aba-botao {
+        border-bottom: 1px solid var(--cor-borda);
+    }
+    .aba-botao.ativo {
+        border-bottom: 3px solid var(--cor-primaria-verde);
+    }
+    .card-acao {
+        width: 100%;
+    }
+}
