@@ -21,37 +21,40 @@
                     <h2>Entrar na Plataforma</h2>
                     <p>Faça login para acessar sua conta</p>
                 </div>
+                
                 <div class="abas">
-                    <button class="aba-botao ativo" data-target="conteudo-form-empresa">ONG</button>
-                    <button class="aba-botao" data-target="conteudo-form-coletor">Coletor</button>
+                    <button class="aba-botao ativo" data-target="conteudo-form-empresa">Sou Organizador</button>
+                    <button class="aba-botao" data-target="conteudo-form-coletor">Sou ONG</button>
                 </div>
+
                 <div id="conteudo-form-empresa" class="aba-conteudo ativo">
-                    <h3 class="formulario-titulo">Login da ONG</h3>
+                    <h3 class="formulario-titulo">Login do Organizador</h3>
                     <form id="formulario-empresa">
                         <div class="grupo-formulario">
                             <label for="empresa-email">E-mail</label>
-                            <input type="email" id="empresa-email" placeholder="seu@reciclacapixaba.com.br" class="campo-obrigatorio" required>
+                            <input type="email" id="empresa-email" placeholder="organizador@email.com" class="campo-obrigatorio" required>
                         </div>
                         <div class="grupo-formulario">
                             <label for="empresa-senha">Senha</label>
                             <input type="password" id="empresa-senha" placeholder="Digite sua senha" class="campo-obrigatorio" required>
                         </div>
-                        <button type="submit" class="botao botao-primario botao-inteiro">Entrar</button>
+                        <button type="submit" class="botao botao-primario botao-inteiro">Entrar como Organizador</button>
                         <p class="mensagem-erro" id="erro-empresa"></p>
                     </form>
                 </div>
+
                 <div id="conteudo-form-coletor" class="aba-conteudo">
-                    <h3 class="formulario-titulo">Login do Coletor</h3>
+                    <h3 class="formulario-titulo">Login da ONG</h3>
                     <form id="formulario-coletor">
                         <div class="grupo-formulario">
                             <label for="coletor-email">E-mail</label>
-                            <input type="email" id="coletor-email" placeholder="seu@email.com" class="campo-obrigatorio" required>
+                            <input type="email" id="coletor-email" placeholder="reciclacapixaba@email.com" class="campo-obrigatorio" required>
                         </div>
                         <div class="grupo-formulario">
                             <label for="coletor-senha">Senha</label>
                             <input type="password" id="coletor-senha" placeholder="Digite sua senha" class="campo-obrigatorio" required>
                         </div>
-                        <button type="submit" class="botao botao-primario botao-inteiro">Entrar</button>
+                        <button type="submit" class="botao botao-primario botao-inteiro">Entrar como ONG</button>
                         <p class="mensagem-erro" id="erro-coletor"></p>
                     </form>
                 </div>
