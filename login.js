@@ -17,16 +17,18 @@ for (let i = 0; i < abas.length; i++) {
     });
 }
 
-const formularioEmpresa = document.getElementById('formulario-empresa');
-if (formularioEmpresa) {
-    formularioEmpresa.addEventListener('submit', function(event) {
+// LÓGICA DO ORGANIZADOR DE EVENTO (Antigo formulário empresa)
+const formularioOrganizador = document.getElementById('formulario-empresa');
+if (formularioOrganizador) {
+    formularioOrganizador.addEventListener('submit', function(event) {
         event.preventDefault();
         const email = document.getElementById('empresa-email').value;
         const senha = document.getElementById('empresa-senha').value;
         const mensagemErro = document.getElementById('erro-empresa');
 
-        // ATUALIZADO: E-mail agora reflete o nome da ONG
-        if (email === 'cooperativas@reciclacapixaba.com.br' && senha === '123456') {
+        // MUDANÇA: Validação do Organizador
+        if (email === 'organizador@email.com' && senha === '123456') {
+            // Vai para a tela de LANÇAR (CRUD), pois o organizador cria os eventos
             window.location.href = 'lancar_coleta.html';
         } else {
             mensagemErro.textContent = 'Usuário ou senha inválidos.';
@@ -34,16 +36,18 @@ if (formularioEmpresa) {
     });
 }
 
-const formularioColetor = document.getElementById('formulario-coletor');
-if (formularioColetor) {
-    formularioColetor.addEventListener('submit', function(event) {
+// LÓGICA DA ONG (Antigo formulário coletor)
+const formularioOng = document.getElementById('formulario-coletor');
+if (formularioOng) {
+    formularioOng.addEventListener('submit', function(event) {
         event.preventDefault();
         const email = document.getElementById('coletor-email').value;
         const senha = document.getElementById('coletor-senha').value;
         const mensagemErro = document.getElementById('erro-coletor');
         
-        // ATUALIZADO: E-mail agora reflete o nome da ONG
-        if (email === 'admin@reciclacapixaba.com.br' && senha === '123456') {
+        // MUDANÇA: Validação da ONG
+        if (email === 'reciclacapixaba@email.com' && senha === '123456') {
+            // Vai para o DASHBOARD (Visualização), para ver onde precisa coletar
             window.location.href = 'coletor_dashboard.html';
         } else {
             mensagemErro.textContent = 'Usuário ou senha inválidos.';
